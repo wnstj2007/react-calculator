@@ -21,7 +21,7 @@ class Display extends React.Component {
   render() {
     return (
       <Container>
-        <div data-display>{this.props.displayValue}</div>
+        <div data-testid="display" data-display>{this.props.displayValue}</div>
       </Container>
     );
   }
