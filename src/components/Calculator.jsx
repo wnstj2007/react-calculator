@@ -6,7 +6,27 @@ import Display from "./Display";
 import ButtonGroup from "./ButtonGroup";
 import Button from "./Button";
 
-const Container = styled.div``;
+const Container = styled.div`
+  margin: 30px auto;
+  text-align: center;
+`;
+
+// TODO: History 내에서 수식 표시할 때 사용
+const Box = styled.div`
+  display: inline-block;
+  width: 270px;
+  height: 65px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-align: right;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+  cursor: pointer;
+  h3 {
+    margin: 0px;
+  }
+`;
 
 const evalFunc = function(string) {
   // eslint-disable-next-line no-new-func
@@ -14,6 +34,7 @@ const evalFunc = function(string) {
 };
 
 class Calculator extends React.Component {
+  // TODO: history 추가
   state = {
     displayValue: ""
   };
@@ -33,10 +54,14 @@ class Calculator extends React.Component {
         }
         this.setState({ displayValue });
       },
+      // TODO: 제곱근 구현
+      "√": () => {},
+      // TODO: 사칙연산 구현
       "÷": () => {},
       "×": () => {},
       "-": () => {},
       "+": () => {
+        // + 연산 참고하여 연산 구현
         if (lastChar !== "" && !operatorKeys.includes(lastChar)) {
           this.setState({ displayValue: displayValue + "+" });
         }
@@ -110,6 +135,8 @@ class Calculator extends React.Component {
             </Button>
           </ButtonGroup>
         </Panel>
+        {/* TODO: History componet를 이용해 map 함수와 Box styled div를 이용해 history 표시 */}
+
       </Container>
     );
   }

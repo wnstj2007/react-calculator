@@ -11,7 +11,7 @@ const Container = styled.div`
 
 class ButtonGroup extends React.Component {
   handleClick = e => {
-    this.props.onClickButton(e.target.innerText);
+    this.props.onClickButton(e.target.textContent);
   };
   render() {
     return (
