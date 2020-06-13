@@ -60,7 +60,7 @@ class Calculator extends React.Component {
       "÷": () => {},
       "×": () => {
         if (lastChar !== "" && !operatorKeys.includes(lastChar)) {
-          this.setState({ displayValue: displayValue + "x" });
+          this.setState({ displayValue: displayValue + "*" });
         }
       },
       "-": () => {
