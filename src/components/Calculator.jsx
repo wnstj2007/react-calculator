@@ -59,12 +59,12 @@ class Calculator extends React.Component {
       // TODO: 사칙연산 구현
       "÷": () => {
         if (lastChar !== "" && !operatorKeys.includes(lastChar)) {
-          this.setState({ displayValue: displayValue + "/" });
+          this.setState({ displayValue: displayValue + "÷" });
         }
       },
       "×": () => {
         if (lastChar !== "" && !operatorKeys.includes(lastChar)) {
-          this.setState({ displayValue: displayValue + "*" });
+          this.setState({ displayValue: displayValue + "×" });
         }
       },
       "-": () => {
