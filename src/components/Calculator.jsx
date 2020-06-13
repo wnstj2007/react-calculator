@@ -99,9 +99,7 @@ class Calculator extends React.Component {
       },
       ".": () => {
         if (lastChar !== "" && !operatorKeys.includes(lastChar)) {
-          var temp = displayValue.split(/[+-×÷]/);
-          temp = temp[temp.length-1];
-          if (!temp.includes(".")) {
+          if (!displayValue.includes(".")) {
             this.setState({ displayValue: displayValue + "." });
           }
         }
